@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>New Document Uploaded</title>
+</head>
+<body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f4f4f4;">
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding: 40px 0;">
+        <table width="600" style="background: #ffffff; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+          
+          <tr>
+            <td style="padding: 20px 30px; background-color: #0d6efd; color: #ffffff; border-radius: 6px 6px 0 0;">
+              <h2 style="margin: 0;">📄 New Document Uploaded</h2>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 30px;">
+              <p style="font-size: 16px;">Hello Admin,</p>
+              <p style="font-size: 14px; color: #333;">
+                A new document titled: 
+                <strong style="color: #0d6efd;">{{ title }}</strong> 
+                has been uploaded successfully.
+              </p>
+
+              {% if document_url %}
+              <p style="font-size: 14px; margin-top: 20px;">
+                📎 <strong>Attachment:</strong> {{ title }}<br>
+                <a href="{{ document_url }}" style="color: #0d6efd; text-decoration: none;">Download here</a>
+              </p>
+              {% endif %}
+
+              <p style="font-size: 14px; margin-top: 30px; color: #666;">
+                You may log in to the dashboard to review or manage the uploaded file.
+              </p>
+            </td>
+          </tr>
+
+          {% if document_url %}
+          <tr>
+            <td align="center" style="padding: 20px;">
+              <a href="{{ document_url }}" 
+                 style="background-color: #0d6efd; color: #ffffff; padding: 12px 20px; text-decoration: none; border-radius: 4px; display: inline-block; font-size: 14px;">
+                 View Document
+              </a>
+            </td>
+          </tr>
+          {% endif %}
+
+          <tr>
+            <td style="padding: 20px 30px; background-color: #f0f0f0; color: #888; font-size: 13px; text-align: center; border-radius: 0 0 6px 6px;">
+              Thank you!<br>
+              <em>— Your System Team</em>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

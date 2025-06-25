@@ -1,0 +1,6 @@
+django==4.2.21
+psycopg2-binary
+celery
+redis
+python-decouple
+mysqlclient==2.2.7
