@@ -1,4 +1,4 @@
-body {
+.register-body {
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    padding: 20px; /* Ensures some spacing on smaller screens */
+    padding: 20px; 
     box-sizing: border-box;
 }
 
@@ -64,5 +64,88 @@ body {
 }
 
 .register-container a:hover {
+    color: #555;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-card {
+    max-width: 500px;
+    margin: 60px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.logout-btn {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.login-body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 20px; /* Ensures some spacing on smaller screens */
+    box-sizing: border-box;
+}
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    text-align: center;
+}
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight:bold;
+    font-size:35px;
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.login-container button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.login-container button:hover {
+    background-color: #555;
+}
+.login-container a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.login-container a:hover {
     color: #555;
 }
