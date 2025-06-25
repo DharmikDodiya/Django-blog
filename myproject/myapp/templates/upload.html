@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Upload File</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/DharmikDodiya/Django-blog@main/myproject/myapp/static/myapp/css/main.css">
-</head>
-<body>
-
-  <div class="container upload-body">
-    <div class="row">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload File</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/DharmikDodiya/Django-blog@main/myproject/myapp/static/myapp/css/main.css"
+    />
+  </head>
+  <body>
+    <div class="container upload-body">
+      <div class="row">
         <div class="col text-end">
-            <a href="{% url 'logout' %}" class="btn btn-outline-danger logout-btn">
+          <a
+            href="{% url 'logout' %}"
+            class="btn btn-outline-danger logout-btn"
+          >
             <i class="bi bi-box-arrow-right me-1"></i> Logout
-            </a>
+          </a>
         </div>
-    </div>
-
-    <div class="card upload-card bg-white">
-      <div class="card-header bg-primary text-white text-center py-3">
-        <h5 class="mb-0"><i class="bi bi-upload me-2"></i> Upload Document</h5>
       </div>
-      <div class="card-body">
 
-        {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-              {{ message }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-          {% endfor %}
-        {% endif %}
+      <div class="card upload-card bg-white">
+        <div class="card-header bg-primary text-white text-center py-3">
+          <h5 class="mb-0">
+            <i class="bi bi-upload me-2"></i> Upload Document
+          </h5>
+        </div>
+        <div class="card-body">
+          {% if messages %} {% for message in messages %}
+          <div
+            class="alert alert-{{ message.tags }} alert-dismissible fade show"
+            role="alert"
+          >
+            {{ message }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          {% endfor %} {% endif %}
 
-        <form method="post" enctype="multipart/form-data" novalidate>
-          {% csrf_token %}
-
-          {% for field in form %}
+          <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %} {% for field in form %}
             <div class="mb-3">
-              <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-              {{ field }}
-              {% if field.errors %}
-                <div class="text-danger small mt-1">{{ field.errors }}</div>
+              <label for="{{ field.id_for_label }}" class="form-label"
+                >{{ field.label }}</label
+              >
+              {{ field }} {% if field.errors %}
+              <div class="text-danger small mt-1">{{ field.errors }}</div>
               {% endif %}
             </div>
-          {% endfor %}
+            {% endfor %}
 
-          <div class="d-grid">
-            <button type="submit" class="btn btn-success">
-              <i class="bi bi-cloud-arrow-up me-1"></i> Upload
-            </button>
-          </div>
-        </form>
-
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">
+                <i class="bi bi-cloud-arrow-up me-1"></i> Upload
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  {% comment %} <script>
-    setTimeout(function () {
-      let alerts = document.querySelectorAll('.alert');
-      alerts.forEach(function (alert) {
-        let bsAlert = new bootstrap.Alert(alert);
-        bsAlert.close();
-      });
-    }, 3000);
-  </script> {% endcomment %}
-  <script src="https://cdn.jsdelivr.net/gh/DharmikDodiya/Django-blog@main/myproject/myapp/static/myapp/js/main.js"></script>
-  
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/DharmikDodiya/Django-blog@main/myproject/myapp/static/myapp/js/main.js"></script>
+  </body>
 </html>
