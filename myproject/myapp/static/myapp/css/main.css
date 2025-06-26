@@ -149,3 +149,9 @@ body {
 .login-container a:hover {
     color: #555;
 }
+
+.logout-btn-align {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
